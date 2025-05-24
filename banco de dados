@@ -1,0 +1,61 @@
+create database jogos;
+use jogos;
+create table tb_produtos(
+pro_id int auto_increment primary key,
+pro_nome varchar(255),
+prod_desc text,
+prod_preco decimal(10,2),
+qntd_estoque int,
+forn_id int,
+cat_id int
+);
+
+create  table tb_categoria(
+cat_id int auto_increment primary key,
+nome_cat varchar(255),
+desc_cat text
+);
+
+create table tb_fornecedor(
+forn_id int auto_increment primary key,
+forn_nome varchar(255),
+forn_num varchar(255),
+forn_cnpj varchar(255),
+forn_email varchar(255),
+forn_end varchar(255)
+);
+
+insert into tb_produtos (pro_id, pro_nome, prod_desc, prod_preco, qntd_estoque, forn_id, cat_id) values
+('2','The Witcher 3: Wild Hunt','RPG de mundo aberto aclamado pela crítica, com história rica e personagens memoráveis','149.90','50','1','5'),
+('3','Minecraft','Jogo de construção e aventura com blocos, popular entre todas as idades','69.99','120','0','2'),
+('4','Red Dead Redemption 2','Aventura épica no velho oeste americano, com mundo aberto vasto e detalhado','199.99','30','2','8');
+
+
+select * from tb_produtos;
+
+insert into tb_categoria (cat_id, nome_cat, desc_cat) values
+('3','Estratégia','tempo real, turnos, grande estratégia, tático'),
+('4','Ação','tiro em primeira pessoa, tiro em terceira pessoa, hack and slash, beat \'em up'),
+('5','Aventura','mundo aberto, point and click, stealth, survival horror'),
+('6','Puzzle','plataforma, lógica, física, visual novel'),
+('7','Esportes','futebol, basquete, corrida, luta, simulação esportiva'),
+('8','Indie','variedade de gêneros com foco em inovação e desenvolvimento independente'),
+('9','Terror','survival horror, psicológico, jumpscare, investigação'),
+('10','Luta','versus fighting, beat \'em up'),
+('11','Plataforma','2D, 3D, metroidvania'),
+('12','Construção e Gerenciamento','cidades, colônias, fábricas, parques'),
+('13','Mundo Aberto','exploração livre com diversas atividades e missões'),
+('14','Battle Royale','multiplayer massivo com eliminação progressiva'),
+('15','MOBA','batalhas online em arena com equipes e objetivos estratégicos');
+select * from tb_categoria;
+
+insert into tb_fornecedor (forn_id, forn_nome, forn_num, forn_cnpj, forn_email, forn_end) values
+('3', 'Digital Game Distributors','11 5877-2211','02.234.567/0001-89','comercial@digitalgamesdist.com','Rua da Liberdade, 567, Vila Iolanda, Taboão da Serra - SP, CEP: 06765-210'),
+('4', 'World of Games Atacado','11 5599-0033','03.345.678/0001-90','atacado@worldofgames.com','Estrada Benedito Cesário de Oliveira, 1200, Parque Industrial, Taboão da Serra - SP, CEP: 06785-350'),
+('5', 'Nexus Game Imports','11 5811-4466','04.456.789/0001-01','importacao@nexusgames.com','Rua das Camélias, 345, Jardim das Oliveiras, Taboão da Serra - SP, CEP: 06766-190'),
+('6', 'Playtime Distributors','11 5566-9988','05.567.890/0001-12','pedidos@playtimedist.com.br','Avenida Rotary, 900, Jardim Sônia Maria, Taboão da Serra - SP, CEP: 06753-060'),
+('7', 'Level Up Supplies','11 5822-3355','06.678.901/0001-23','suporte@levelupsupplies.com','Rua Ernesto Capelari, 678, Jardim Bom Tempo, Taboão da Serra - SP, CEP: 06761-490'),
+('8', 'Gamer\'s Choice BR','11 5577-1144','07.789.012/0001-34','vendasbr@gamerschoice.com','Travessa das Bromélias, 123, Jardim Santa Luzia, Taboão da Serra - SP, CEP: 06762-030'),
+('9', 'Pixel Perfect Distribution','11 5899-5522','08.890.123/0001-45','info@pixelperfectdist.com','Alameda dos Jasmins, 456, Vila Esperança, Taboão da Serra - SP, CEP: 06754-170'),
+('10', 'Console Masters Atacado','11 5511-7766','09.901.234/0001-56','atacado@consolemasters.com.br','Estrada Tenente José Maria da Cunha, 1800, Jardim Record, Taboão da Serra - SP, CEP: 06773-480'),
+('11', 'eSports Trading LTDA','11 5844-9911','10.012.345/0001-67','contato@esportstrading.com','Rua do Progresso, 234, Jardim Maria Helena, Taboão da Serra - SP, CEP: 06768-290');
